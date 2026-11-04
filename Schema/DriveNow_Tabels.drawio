@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="all-schema" name="2-Schema-All-Tables">
+    <mxGraphModel dx="699" dy="339" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="6500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;" value="&lt;span&gt;DriveNow Relational Schema&lt;/span&gt;" vertex="1">
+          <mxGeometry height="45" width="2300" x="10" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Branch&lt;/span&gt;&lt;hr&gt;PK BranchCode&lt;br&gt;BranchName&lt;br&gt;Street&lt;br&gt;City&lt;br&gt;Governorate&lt;br&gt;OpeningTime&lt;br&gt;ClosingTime" vertex="1">
+          <mxGeometry height="188" width="540" x="30" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;BranchPhone&lt;/span&gt;&lt;hr&gt;PK, FK BranchCode&lt;br&gt;PK PhoneNumber" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Employee&lt;/span&gt;&lt;hr&gt;PK EmployeeID&lt;br&gt;NationalID (UNIQUE)&lt;br&gt;FirstName&lt;br&gt;MiddleName&lt;br&gt;LastName&lt;br&gt;DateOfBirth&lt;br&gt;HireDate&lt;br&gt;Salary&lt;br&gt;CompanyEmail (UNIQUE)&lt;br&gt;FK BranchCode" vertex="1">
+          <mxGeometry height="254" width="540" x="30" y="541" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;RentalAgent&lt;/span&gt;&lt;hr&gt;PK, FK EmployeeID&lt;br&gt;CommissionPercentage (CHECK &amp;lt;= 15%)" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="811" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Mechanic&lt;/span&gt;&lt;hr&gt;PK, FK EmployeeID&lt;br&gt;Specialization&lt;br&gt;CertificationLevel (CHECK 1–5)" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="982" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Course&lt;/span&gt;&lt;hr&gt;PK CourseCode&lt;br&gt;Title&lt;br&gt;NumberOfHours" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="1153" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CourseAttempt&lt;/span&gt;&lt;hr&gt;PK AttemptID&lt;br&gt;FK EmployeeID&lt;br&gt;FK CourseCode&lt;br&gt;EnrollmentDate&lt;br&gt;CompletionDate&lt;br&gt;Score (CHECK 0–100)&lt;br&gt;PassFailStatus" vertex="1">
+          <mxGeometry height="188" width="540" x="30" y="1324" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Customer&lt;/span&gt;&lt;hr&gt;PK CustomerNumber&lt;br&gt;Email&lt;br&gt;Street&lt;br&gt;City&lt;br&gt;Governorate&lt;br&gt;RegistrationDate" vertex="1">
+          <mxGeometry height="166" width="540" x="30" y="1528" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CustomerPhone&lt;/span&gt;&lt;hr&gt;PK, FK CustomerNumber&lt;br&gt;PK PhoneNumber" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;IndividualCustomer&lt;/span&gt;&lt;hr&gt;PK, FK CustomerNumber&lt;br&gt;FirstName&lt;br&gt;MiddleName&lt;br&gt;LastName&lt;br&gt;DateOfBirth&lt;br&gt;NationalID&lt;br&gt;PassportNumber&lt;br&gt;LicenseNumber&lt;br&gt;IssuingCountry&lt;br&gt;LicenseExpiryDate" vertex="1">
+          <mxGeometry height="254" width="540" x="30" y="1881" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CorporateCustomer&lt;/span&gt;&lt;hr&gt;PK, FK CustomerNumber&lt;br&gt;CompanyName&lt;br&gt;TaxRegistrationNumber (UNIQUE)&lt;br&gt;ContactPersonName&lt;br&gt;CreditLimit" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="2151" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CorporateDriver&lt;/span&gt;&lt;hr&gt;PK, FK CustomerNumber&lt;br&gt;PK DriverNumber&lt;br&gt;DriverName&lt;br&gt;LicenseNumber&lt;br&gt;LicenseExpiryDate&lt;br&gt;Phone" vertex="1">
+          <mxGeometry height="166" width="540" x="30" y="2322" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;BlacklistRecord&lt;/span&gt;&lt;hr&gt;PK BlacklistID&lt;br&gt;FK CustomerNumber&lt;br&gt;FK ManagerEmployeeID&lt;br&gt;Reason&lt;br&gt;BlacklistDate" vertex="1">
+          <mxGeometry height="155" width="540" x="30" y="2504" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CorporateCategoryDiscount&lt;/span&gt;&lt;hr&gt;PK DiscountID&lt;br&gt;FK CustomerNumber&lt;br&gt;FK CategoryID&lt;br&gt;DiscountPercentage (CHECK &amp;lt;= 50%)&lt;br&gt;StartDate&lt;br&gt;EndDate" vertex="1">
+          <mxGeometry height="166" width="540" x="30" y="2675" as="geometry" />
+        </mxCell>
+        <mxCell id="t0_14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;LoyaltyTransaction&lt;/span&gt;&lt;hr&gt;PK TransactionID&lt;br&gt;FK CustomerNumber&lt;br&gt;FK RentalID (NULL)&lt;br&gt;TransactionDate&lt;br&gt;Points&lt;br&gt;TransactionType" vertex="1">
+          <mxGeometry height="166" width="540" x="30" y="2857" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Category&lt;/span&gt;&lt;hr&gt;PK CategoryID&lt;br&gt;CategoryName" vertex="1">
+          <mxGeometry height="155" width="540" x="610" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CarModel&lt;/span&gt;&lt;hr&gt;PK ModelID&lt;br&gt;FK CategoryID&lt;br&gt;Manufacturer&lt;br&gt;ModelName&lt;br&gt;Year&lt;br&gt;NumberOfSeats&lt;br&gt;TransmissionType&lt;br&gt;FuelType" vertex="1">
+          <mxGeometry height="210" width="540" x="610" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;PhysicalVehicle&lt;/span&gt;&lt;hr&gt;PK VIN&lt;br&gt;FK ModelID&lt;br&gt;FK Home_BranchCode&lt;br&gt;FK Current_BranchCode&lt;br&gt;PlateNumber (UNIQUE)&lt;br&gt;Color&lt;br&gt;PurchaseDate&lt;br&gt;PurchasePrice&lt;br&gt;CurrentOdometer&lt;br&gt;Status" vertex="1">
+          <mxGeometry height="254" width="540" x="610" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;VehicleStatusHistory&lt;/span&gt;&lt;hr&gt;PK StatusChangeID&lt;br&gt;FK VIN&lt;br&gt;FK ChangedByEmployeeID&lt;br&gt;OldStatus&lt;br&gt;NewStatus&lt;br&gt;ChangedAt" vertex="1">
+          <mxGeometry height="166" width="540" x="600" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;GPSDevice&lt;/span&gt;&lt;hr&gt;PK SerialNumber&lt;br&gt;Manufacturer&lt;br&gt;SIMCardNumber (UNIQUE)&lt;br&gt;FK VIN (NULL, UNIQUE)&lt;br&gt;InstallationDate" vertex="1">
+          <mxGeometry height="155" width="540" x="610" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;VehicleTransfer&lt;/span&gt;&lt;hr&gt;PK TransferID&lt;br&gt;FK VIN&lt;br&gt;FK FromBranchCode&lt;br&gt;FK ToBranchCode&lt;br&gt;FK EmployeeID&lt;br&gt;TransferDateTime&lt;br&gt;OdometerAtTransfer" vertex="1">
+          <mxGeometry height="188" width="540" x="600" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;CategoryRate&lt;/span&gt;&lt;hr&gt;PK RateID&lt;br&gt;FK CategoryID&lt;br&gt;DailyRate&lt;br&gt;ValidFrom&lt;br&gt;ValidTo" vertex="1">
+          <mxGeometry height="155" width="540" x="600" y="1512" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Extra&lt;/span&gt;&lt;hr&gt;PK ExtraCode&lt;br&gt;Name&lt;br&gt;DailyCharge" vertex="1">
+          <mxGeometry height="155" width="540" x="600" y="1730" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;PromoCode&lt;/span&gt;&lt;hr&gt;PK PromoCodeID&lt;br&gt;MaximumNumberOfUses&lt;br&gt;ValidityStart&lt;br&gt;ValidityEnd&lt;br&gt;DiscountPercentage" vertex="1">
+          <mxGeometry height="155" width="540" x="600" y="1980" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Reservation&lt;/span&gt;&lt;hr&gt;PK ReservationID&lt;br&gt;FK CustomerNumber&lt;br&gt;FK CategoryID&lt;br&gt;FK PickupBranchCode&lt;br&gt;FK ReturnBranchCode&lt;br&gt;FK PromoCodeID (NULL)&lt;br&gt;ReservationDateTime&lt;br&gt;RequestedPickupDateTime&lt;br&gt;RequestedReturnDateTime&lt;br&gt;Status&lt;br&gt;ReservationChannel" vertex="1">
+          <mxGeometry height="276" width="540" x="1190" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Rental&lt;/span&gt;&lt;hr&gt;PK RentalID&lt;br&gt;FK CustomerNumber&lt;br&gt;FK VIN&lt;br&gt;FK ReservationID (NULL, UNIQUE)&lt;br&gt;FK PickupBranchCode&lt;br&gt;FK ReturnBranchCode&lt;br&gt;FK HandedOverByEmployeeID&lt;br&gt;FK ReceivedByEmployeeID (NULL)&lt;br&gt;FK PreviousRentalID (NULL, UNIQUE)&lt;br&gt;PickupDateTime&lt;br&gt;ExpectedReturnDateTime&lt;br&gt;ActualReturnDateTime&lt;br&gt;PickupOdometer&lt;br&gt;ReturnOdometer&lt;br&gt;PickupFuelLevel&lt;br&gt;ReturnFuelLevel&lt;br&gt;LateFee" vertex="1">
+          <mxGeometry height="408" width="540" x="1190" y="458" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;RentalDrive&lt;/span&gt;&lt;hr&gt;PK, FK RentalID&lt;br&gt;PK, FK CustomerNumber&lt;br&gt;PK DriverNumber&lt;br&gt;DriverRole (Main/Additional)&lt;br&gt;DailyFee" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="882" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;RentalExtra&lt;/span&gt;&lt;hr&gt;PK, FK RentalID&lt;br&gt;PK, FK ExtraCode&lt;br&gt;Quantity&lt;br&gt;ChargeAtRental" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="1053" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;InsurancePackage&lt;/span&gt;&lt;hr&gt;PK PackageCode&lt;br&gt;Name&lt;br&gt;DailyPrice&lt;br&gt;MaximumCoverageAmount&lt;br&gt;Deductible" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="1224" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;RentalInsurance&lt;/span&gt;&lt;hr&gt;PK, FK RentalID&lt;br&gt;PK, FK PackageCode&lt;br&gt;ChargedDailyPrice" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;DamageReport&lt;/span&gt;&lt;hr&gt;PK, FK RentalID&lt;br&gt;PK ReportNumber (partial key)&lt;br&gt;Description&lt;br&gt;Severity&lt;br&gt;EstimatedRepairCost" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="1566" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;DamagePhoto&lt;/span&gt;&lt;hr&gt;PK, FK RentalID&lt;br&gt;PK, FK ReportNumber&lt;br&gt;PK PhotoURL" vertex="1">
+          <mxGeometry height="155" width="540" x="1190" y="1737" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;TrafficViolation&lt;/span&gt;&lt;hr&gt;PK ViolationNumber&lt;br&gt;FK RentalID&lt;br&gt;ViolationDateTime&lt;br&gt;Location&lt;br&gt;Type&lt;br&gt;FineAmount" vertex="1">
+          <mxGeometry height="166" width="540" x="1190" y="1908" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Feedback&lt;/span&gt;&lt;hr&gt;PK FeedbackID&lt;br&gt;FK RentalID (UNIQUE)&lt;br&gt;FK CustomerNumber&lt;br&gt;Rating (CHECK 1–5)&lt;br&gt;Comment&lt;br&gt;SubmissionDate" vertex="1">
+          <mxGeometry height="166" width="540" x="1190" y="2090" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;JobCard&lt;/span&gt;&lt;hr&gt;PK JobNumber&lt;br&gt;FK VIN&lt;br&gt;FK RentalID (NULL)&lt;br&gt;DateIn&lt;br&gt;DateOut&lt;br&gt;WorkType&lt;br&gt;TotalCost" vertex="1">
+          <mxGeometry height="188" width="540" x="1770" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;JobMechanic&lt;/span&gt;&lt;hr&gt;PK, FK JobNumber&lt;br&gt;PK, FK MechanicEmployeeID&lt;br&gt;HoursSpent" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Part&lt;/span&gt;&lt;hr&gt;PK PartNumber&lt;br&gt;Name&lt;br&gt;CurrentUnitCost&lt;br&gt;QuantityInStock" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="541" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;JobPart&lt;/span&gt;&lt;hr&gt;PK, FK JobNumber&lt;br&gt;PK, FK PartNumber&lt;br&gt;QuantityUsed&lt;br&gt;UnitCostAtTime" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="712" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Supplier&lt;/span&gt;&lt;hr&gt;PK SupplierID&lt;br&gt;Name&lt;br&gt;PhoneNumber&lt;br&gt;Email" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="883" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;SupplierPart&lt;/span&gt;&lt;hr&gt;PK, FK SupplierID&lt;br&gt;PK, FK PartNumber&lt;br&gt;SupplierPrice&lt;br&gt;DeliveryLeadTimeDays" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="1054" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Payment&lt;/span&gt;&lt;hr&gt;PK PaymentID&lt;br&gt;FK RentalID&lt;br&gt;Amount&lt;br&gt;PaymentDateTime&lt;br&gt;PaymentType&lt;br&gt;PaymentMethod&lt;br&gt;TransactionReference (UNIQUE, NULL)" vertex="1">
+          <mxGeometry height="188" width="540" x="1770" y="1225" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;Invoice&lt;/span&gt;&lt;hr&gt;PK InvoiceID&lt;br&gt;FK CustomerNumber&lt;br&gt;InvoiceMonth&lt;br&gt;InvoiceYear&lt;br&gt;IssueDate&lt;br&gt;TotalAmount&lt;br&gt;DueDate&lt;br&gt;Status" vertex="1">
+          <mxGeometry height="210" width="540" x="1770" y="1429" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=10;strokeColor=#333333;fillColor=#ffffff;fontStyle=0" value="&lt;span&gt;InvoiceRental&lt;/span&gt;&lt;hr&gt;PK, FK InvoiceID&lt;br&gt;PK, FK RentalID (UNIQUE)" vertex="1">
+          <mxGeometry height="155" width="540" x="1770" y="1655" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
